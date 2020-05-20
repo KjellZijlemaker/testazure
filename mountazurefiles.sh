@@ -15,8 +15,7 @@ mount -t cifs //$1.file.core.windows.net/$3 $4 -o vers=3.0,username=$1,password=
 
 # create a symlink from /mountpath/xxx to ~username/xxx
 linkpoint=`echo $4 | sed 's/.*\///'`
-mkdir /home/$5/notebooks
-mkdir /home/$5/notebooks/remote
+mkdir -p /home/kjell/notebooks/remote
 #ln -s $4 /home/$5/$linkpoint
 # If you store your notebooks on a Azure Files to be mounted on any VM, link it to the ~/notebooks/remote to be accessible on Jupyter
 # Convention: You have notebooks/<USERNAME> on your File Share
